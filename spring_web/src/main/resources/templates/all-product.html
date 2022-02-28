@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Cost</td>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.id}"/>
+            <td th:text="${product.name}"/>
+            <td th:text="${product.cost}"/>
+            <td>
+                <button th:attr="entryIndex=${product.id}"> Info</button>
+                <a th:href="@{'/remove/'+${product.id}}" role="button">Remove</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
