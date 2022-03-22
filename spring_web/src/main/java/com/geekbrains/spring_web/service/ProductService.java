@@ -33,4 +33,11 @@ public class ProductService {
         Optional<Product> product = productRepository.findById(id);
         return product;
     }
+
+    public void deleteById(Long id){
+        productRepository.deleteById(id);
+    }
+    public Product saveOrUpdate(Product product){
+        return productRepository.save(product);
+    }
 }
